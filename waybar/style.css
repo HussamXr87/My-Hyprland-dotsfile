@@ -1,0 +1,129 @@
+#waybar {
+    font-family: "Fira Sans SemiBold", "Symbols Nerd Font";
+    font-size: 13px;
+}
+
+#window {
+    padding: 0 10px;
+}
+
+window#waybar {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    text-shadow: none;
+    transition-duration: 0s;
+    color: rgba(217, 216, 216, 1);
+    background: rgba(0, 0, 0, 0.87);;
+
+}
+
+window#waybar.solo {
+    background: rgb(35, 31, 32);
+    /* font-family: "Ubuntu Medium";
+    font-size: 15px; */
+}
+
+#clock {
+    /* margin:     0px 16px 0px 10px; */
+    color: whitesmoke;
+    min-width:  140px;
+}
+
+
+#workspaces {
+    background-color: rgba(0, 0, 0, 0.87);
+    margin: 5px 5px;
+}
+
+#workspaces button {
+    margin-right: 5px;
+    padding: 0 8px;
+    color: rgba(217, 216, 216, 0.4);
+    border-radius: 10px;
+}
+
+#workspaces button.visible {
+    color: turquoise;
+}
+ 
+
+#workspaces button.urgent {
+    background-color: turquoise;
+    color: red;
+}
+
+#workspaces button:hover {
+    background-color: rgba(0, 0, 0, 0.87);
+    border: 2px solid turquoise;
+}
+
+/* Repeat style here to ensure properties are overwritten as there's no !important and button:hover above resets the colour */
+
+#language {
+    color: orchid;
+}
+#idle_inhibitor {
+    color: powderblue;
+}
+#backlight {
+    color: darkgoldenrod;
+}
+#custom-remember {
+    color: darkred;
+}
+#pulseaudio {
+    /* font-size: 26px; */
+    color:khaki;
+}
+
+#temperature {
+    color: lightpink;
+}
+
+#battery {
+    color: lightgreen;
+}
+
+#battery.warning {
+    color: rgba(255, 210, 4, 1);
+}
+
+#battery.critical {
+    color: rgba(238, 46, 36, 1);
+}
+
+#battery.charging {
+    color: rgba(217, 216, 216, 1);
+}
+
+#custom-powermenu {
+    color:lightcoral;
+}
+
+
+
+
+#language,
+#tray,
+#battery,
+#temperature,
+#pulseaudio,
+#idle_inhibitor,
+#hyprland-language,
+#power-profiles-daemon,
+#backlight,
+#custom-powermenu,
+#custom-remember{
+    margin: 0px 0px 0px 5px;
+    padding: 0 8px;
+    /* border-top: 3px solid rgba(217, 216, 216, 0.5); */
+}
+
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}

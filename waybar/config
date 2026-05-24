@@ -1,0 +1,144 @@
+{
+    "layer": "top",
+    "position": "top",
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["hyprland/language", "tray", "idle_inhibitor","backlight","pulseaudio", "temperature", "battery", "power-profiles-daemon","custom/powermenu"],
+    
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "disable-markup": false,
+        "format": "{icon}",
+        "persistent-workspaces": {
+            "1": [],
+            "2": [],
+            "3": [],
+            "4": [],
+            "5": []
+        },
+        "format-icons": {
+            "1": "I",
+            "2": "II",
+            "3": "III",
+            "4": "IV",
+            "5": "V",
+            "6": "VI",
+            "7": "VII",
+            "8": "VIII",
+            "9": "IX",
+            "10": "X"
+        }
+    },
+        "clock": {
+            "format": "{:%I:%M %p}",
+            "format-alt": "{:%A, %B %d, %Y} ",
+            "tooltip-format": "<tt><small>{calendar}</small></tt>",
+            "calendar": {
+                        "mode"          : "months",
+                        "mode-mon-col"  : 3,
+                        "weeks-pos"     : "right",
+                        "on-scroll"     : 1,
+                        "format": {
+                                "months":     "<span color='#ffead3'><b>{}</b></span>",
+                                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                                "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                                "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                                }
+                        },
+            "actions":  {
+                        "on-click-right": "mode",
+                        "on-scroll-up": "shift_up",
+                        "on-scroll-down": "shift_down"
+                        }
+    },
+   
+    "hyprland/language": {
+        "format": "{}",
+        "tooltip-format": "{long}",
+        "on-click": "swaymsg input 'type:keyboard' xkb_switch_layout next"
+    },
+
+     "tray": {
+        "icon-size": 18,
+        "spacing": 10
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-alt": "{icon}  idle {status}",
+        "format-alt-click": "click-right",
+        "format-icons": {
+            "activated": "<span font='Font Awesome 7 Free 9'></span>",
+            "deactivated": "<span font='Font Awesome 7 Free 9'></span>"
+        },
+        "start-activated": true,
+        "on-activated": "pidof hypredle || hypridle",
+        "on-deactivated": "killall hypridle",
+        "tooltip": true
+    },
+
+    "backlight": {
+        "format": "{icon}",
+        "format-alt": "{icon} {percent}%",
+        "format-alt-click": "click-right",
+        "format-icons": ["󱩎","󱩐","󱩒","󱩕","󰛨"],
+        "on-scroll-down": "brightnessctl -e4 -n2 set 5%-",
+        "on-scroll-up": "brightnessctl -e4 -n2 set 5%+"
+    },
+    
+    "pulseaudio": {
+        "format": "<span font='Font Awesome 7 Free 11'>{icon}</span>  {volume}%",
+        "format-bluetooth": "<span font='Font Awesome 7 Free 11'> {icon}</span>  {volume}% - {desc}",
+        "format-muted": "\uf466",
+        "format-icons": {
+            "headset": [" ", " ", " ", " "],
+            "default": ["", "", "\uf6a8", ""]
+        },
+        "scroll-step": 5,
+        "on-click": "pavucontrol",
+        "tooltip": false
+    },
+    
+    "temperature": {
+        "format": "\uf4bc {temperatureC:3}°C",
+        
+        "hwmon-path": "/sys/class/thermal/thermal_zone11/temp",
+        "on-click": "terminator -e 'watch -n1 sensors'"
+    },
+    
+   
+    "battery": {
+        "format": "<span font='Font Awesome 7 Free 11'>{icon}</span> {capacity}%",
+        "format-alt": "<span font='Font Awesome 7 Free 11'>{icon}</span> {capacity}% - {time}",
+        "format-icons": ["", "", "", "", ""],
+        "format-time": "{H}h{M}m",
+        "format-charging": "<span font='Font Awesome 7Free'></span>  <span font='Font Awesome 7 Free 11'>{icon}</span>  {capacity}% - {time}",
+        "format-full": "<span font='Font Awesome 7Free'></span>  <span font='Font Awesome 7 Free 11'>{icon}</span>  Charged",
+        "interval": 30,
+        "states": {
+            "warning": 25,
+            "critical": 10
+        },
+        "tooltip": false,
+        "on-click": "2"
+    },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
+    },
+    "custom/powermenu": {
+        "return-type": "json",
+        "format": "\uf011",
+        "interval": 3600,
+        "escape": true,
+        "on-click": "wlogout"
+    }
+}
