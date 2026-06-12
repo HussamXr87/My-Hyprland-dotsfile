@@ -10,5 +10,7 @@
 - brightnessctl 
 - network-manager-applet 
 - blueman
+- font awesome 7 
+- any nerd font 
 
 Note: keep in mind that the names of these packages might be difference from Linux distribution to another.
