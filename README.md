@@ -12,6 +12,6 @@
 - blueman
 - font awesome 7 
 - any nerd font 
-- flameshot
-
+- flameshote
+- hyprpolkitagent
 Note: keep in mind that the names of these packages might be difference from Linux distribution to another.
