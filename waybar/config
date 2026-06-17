@@ -66,15 +66,15 @@
 
     "idle_inhibitor": {
         "format": "{icon}",
-        "format-alt": "{icon}  idle {status}",
+        "format-alt": "{icon}  idle inhibitor {status}",
         "format-alt-click": "click-right",
+	"tooltip-format-activated": "idle is not active",
+	"tooltip-format-deactivated": "idle is active",
         "format-icons": {
-            "activated": "<span font='Font Awesome 7 Free 9'></span>",
-            "deactivated": "<span font='Font Awesome 7 Free 9'></span>"
+            "activated": "<span font='Font Awesome 7 Free 9'></span>",
+            "deactivated": "<span font='Font Awesome 7 Free 9'></span>"
         },
-        "start-activated": true,
-        "on-activated": "pidof hypredle || hypridle",
-        "on-deactivated": "killall hypridle",
+        "start-activated": false,
         "tooltip": true
     },
 
