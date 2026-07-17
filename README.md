@@ -14,5 +14,8 @@
 - any nerd font 
 - flameshote
 - hyprpolkitagent
-  
-Note: keep in mind that the names of these packages might be different from one Linux distribution to another.
+
+<p>I used rofi themes from this repo: https://github.com/newmanls/rofi-themes-collection/tree/master</p>
+
+<p>Note: keep in mind that the names of these packages might be different from one Linux distribution to another.</p>
+
