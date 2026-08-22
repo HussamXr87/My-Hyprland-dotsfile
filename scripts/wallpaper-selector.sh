@@ -11,10 +11,10 @@ fi
 # Construct a list where each item passes its text name AND its absolute path as the icon asset
 MENU_ITEMS=""
 while IFS= read -r filepath; do
-    file=$(basename filepath)
+    file=$(basename "$filepath")
     if [[ "$file" =~ \.(png|jpg|jpeg|webp|gif)$ ]]; then
         # Format: DisplayName\0icon\x1f/Absolute/Path/To/Image
-        MENU_ITEMS+="${file}\0icon\x1f${WALL_DIR}/${file}\n"
+        MENU_ITEMS+="${file}\0icon\x1f${filepath}\n"
     fi
 done < <( find "$WALL_DIR" -type f)
 
