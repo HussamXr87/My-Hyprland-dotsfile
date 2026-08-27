@@ -44,6 +44,7 @@ hl.env("HYPRCURSOR_SIZE", "24")
 
 -- Lock and Feel
 require("hyprland.decoration")
+require("hyprland.genral")
 
 -- Animations
 require("hyprland.animations")
