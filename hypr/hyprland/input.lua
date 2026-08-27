@@ -1,6 +1,6 @@
 hl.config {
     input = {
-        kb_layout = "us","ara",
+        kb_layout = "us, ara",
         kb_variant = ",qwerty",
         kb_options = "grp:alt_shift_toggle",
 
@@ -11,9 +11,11 @@ hl.config {
         touchpad = {
             natural_scroll = true
         }
-    },
-
-    gasture = {3, "horizontal", "workspace"},
-
-    
+    }
 }
+
+hl.gesture({
+    fingers = 3,
+    direction = "horizontal",
+    action = "workspace"
+})
