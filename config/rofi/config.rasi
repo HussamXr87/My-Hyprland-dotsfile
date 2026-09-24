@@ -1,2 +1,2 @@
 
-@theme "/usr/share/rofi/themes/windows11-grid-dark.rasi"
+@theme "~/.config/rofi/themes/windows11-grid-dark.rasi"

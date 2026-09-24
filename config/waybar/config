@@ -12,6 +12,7 @@
         "tray",
         "idle_inhibitor",
         "backlight",
+        "custom/mictoggle",
         "pulseaudio",
         "temperature",
         "battery",
@@ -99,6 +100,17 @@
         ],
         "on-scroll-down": "brightnessctl -e4 -n2 set 5%-",
         "on-scroll-up": "brightnessctl -e4 -n2 set 5%+"
+    },
+    "custom/mictoggle": {
+        "format": "{icon}",
+        "format-icons": {
+            "muted": "󰍭",
+            "unmuted": "󰍬"
+        },
+        "exec": "~/.local/share/scripts/mictoggle waybar-check",
+        "on-click": "~/.local/share/scripts/mictoggle toggle --no-notification",
+        "interval": 0.5,
+        "return-type": "json"
     },
     "pulseaudio": {
         "format": "<span font='Font Awesome 7 Free 11'>{icon}</span>  {volume}%",

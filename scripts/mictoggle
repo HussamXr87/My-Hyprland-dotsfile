@@ -1,0 +1,58 @@
+#!/bin/bash
+
+
+show_help() {
+    cat << 'EOF'
+Usage: mictoggle [ARGUMENT] [OPTION]
+
+A simple script to toggle your microphone and send desktop notifications.
+
+Arguments:
+  toggle, -t        Toggle the microphone state (mutes if active, un-mutes if muted)
+  waybar-check, -w  Check the microphone status for Waybar
+  check, -c         Check the current microphone status
+  help, -h          Display this help message and exit
+   
+Options:
+  --no-notification   Suppress desktop notifications for the command
+
+Examples:
+  mictoggle -t                    Toggle mic and show notification
+  mictoggle toggle --no-notification  Toggle mic silently without notification
+  mictoggle -c                    Check if the mic is currently muted or active
+EOF
+    exit 0
+}
+
+case "$1" in
+
+    toggle|-t) wpctl set-mute @DEFAULT_SOURCE@ toggle;;
+    
+    check|-c)
+        IS_MUTED="$(wpctl get-volume @DEFAULT_SOURCE@)"
+        [[ "$IS_MUTED" == *"[MUTED]"* ]] && echo "Muted" || echo "Unmuted" ;;
+
+    waybar-check|-w)
+        IS_MUTED="$(wpctl get-volume @DEFAULT_SOURCE@)"
+        if [[ "$IS_MUTED" == *"[MUTED]"* ]]; then
+            echo '{"text": "Muted", "alt": "muted", "class": "muted"}'
+        else
+            echo '{"text": "Unmuted", "alt": "unmuted", "class": "unmuted"}'
+        fi
+        exit 0
+    ;;
+
+    help|-h) show_help;;
+
+    *) echo "Unknown option: $1"; exit 0;;
+
+esac
+
+if [[ "$2" != "--no-notification" ]]; then
+    IS_MUTED="$(wpctl get-volume @DEFAULT_SOURCE@)"
+    if [[ "$IS_MUTED" == *"[MUTED]"* ]]; then
+        notify-send "Microphone status: muted"
+    else
+        notify-send "Microphone status: unmuted"
+    fi
+fi
