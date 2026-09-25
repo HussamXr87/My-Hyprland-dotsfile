@@ -16,6 +16,7 @@
         "pulseaudio",
         "temperature",
         "battery",
+        "custom/swaync",
         "power-profiles-daemon",
         "custom/powermenu"
     ],
@@ -160,6 +161,12 @@
         "tooltip": false,
         "on-click": "2"
     },
+    "custom/swaync": {
+        "format": "󰂚",
+        "escape": true,
+        "on-click": "swaync-client -t"
+    },
+
     "power-profiles-daemon": {
         "format": "{icon}",
         "tooltip-format": "Power profile: {profile}\nDriver: {driver}",

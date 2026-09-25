@@ -1,0 +1,5 @@
+#!/bin/bash
+
+hyprctl eval "hl.exec_cmd('kitty -e btop')"
+
+swaync-client -cp

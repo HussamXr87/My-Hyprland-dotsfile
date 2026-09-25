@@ -1,0 +1,92 @@
+{
+  "ignore-gtk-theme": false,
+  "positionX": "right",
+  "positionY": "top",
+  "layer": "overlay",
+  "control-center-layer": "top",
+  "layer-shell": true,
+  "layer-shell-cover-screen": true,
+  "cssPriority": "user",
+  "notification-2fa-action": true,
+  "notification-inline-replies": false,
+  "notification-body-image-height": 150,
+  "notification-body-image-width": 300,
+  "timeout": 10,
+  "timeout-low": 5,
+  "timeout-critical": 0,
+  "relative-timestamps": true,
+  "notification-window-width": 500,
+  "keyboard-shortcuts": true,
+  "notification-grouping": true,
+  "transition-time": 200,
+  "hide-on-clear": false,
+  "hide-on-action": false,
+  "text-empty": "No Notifications",
+  
+  "fit-to-screen": true,
+  "control-center-width": 500,
+  "control-center-height": 700,
+  "control-center-positionX": "right",
+
+  
+  "script-fail-notify": true,
+
+  "widgets": [
+    
+    "mpris",
+    "dnd",
+    "title",
+    "notifications",
+    "volume",
+    "buttons-grid"
+  ],
+
+  "widget-config": {
+
+    "backlight": {
+      "device": "amdgpu_bl1",
+      "label": "󰃠",
+      "slider": true,
+      "min": 10
+    },
+    "volume": {
+      "device": "default",
+      "label": "",
+      "slider": true
+    },
+
+    "dnd": {
+      "text": "Do not disturb"
+    },
+
+    "mpris": {
+      "image-size": 100,
+      "image-radius": 10,
+      "autohide": false,
+      "blacklist": [ "org.mpris.MediaPlayer2.playerctld"]
+    },
+    "buttons-grid": {
+
+      "actions": [
+        {
+          "label": "",
+          "type": "toggle",
+          "command": "$HOME/.local/share/scripts/mictoggle toggle --no-notification",
+          "update-command": "$HOME/.local/share/scripts/mictoggle is-mute --no-notification"
+        },
+        {
+          "label": "",
+          "command": "$HOME/.config/swaync/scripts/btop"
+        },
+        {
+          "label": "",
+          "command": "$HOME/.config/swaync/scripts/nwg-look"
+        },
+        {
+          "label": "",
+          "command": "swaync-client -cp ; wlogout"
+        }
+      ]
+    }
+  }
+}

@@ -10,7 +10,7 @@ A simple script to toggle your microphone and send desktop notifications.
 Arguments:
   toggle, -t        Toggle the microphone state (mutes if active, un-mutes if muted)
   waybar-check, -w  Check the microphone status for Waybar
-  check, -c         Check the current microphone status
+  is-mute, -c       Check the current microphone status
   help, -h          Display this help message and exit
    
 Options:
@@ -28,9 +28,9 @@ case "$1" in
 
     toggle|-t) wpctl set-mute @DEFAULT_SOURCE@ toggle;;
     
-    check|-c)
+    is-mute|-c)
         IS_MUTED="$(wpctl get-volume @DEFAULT_SOURCE@)"
-        [[ "$IS_MUTED" == *"[MUTED]"* ]] && echo "Muted" || echo "Unmuted" ;;
+        [[ "$IS_MUTED" == *"[MUTED]"* ]] && echo true || echo false ;;
 
     waybar-check|-w)
         IS_MUTED="$(wpctl get-volume @DEFAULT_SOURCE@)"

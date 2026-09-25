@@ -1,0 +1,5 @@
+#!/bin/bash
+
+hyprctl eval "hl.exec_cmd('nwg-look')"
+
+swaync-client -cp
