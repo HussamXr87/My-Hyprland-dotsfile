@@ -93,14 +93,20 @@
         "format": "{icon}",
         "format-alt": "{icon} {percent}%",
         "format-icons": [
+            "󰛩",
             "󱩎",
+            "󱩏",
             "󱩐",
+            "󱩑",
             "󱩒",
+            "󱩓",
+            "󱩔",
             "󱩕",
+            "󱩖",
             "󰛨"
         ],
-        "on-scroll-down": "brightnessctl -e4 -n2 set 5%-",
-        "on-scroll-up": "brightnessctl -e4 -n2 set 5%+"
+        "on-scroll-down": "brightnessctl -n5 set 5%-",
+        "on-scroll-up": "brightnessctl -n5 set 5%+"
     },
     "custom/mictoggle": {
         "format": "{icon}",
