@@ -1,0 +1,36 @@
+{
+    "hyprland": [
+        "hyprland.lua",
+        "hyprland"
+    ],
+    "hypridle": [
+        "hypridle.conf"
+    ],
+    "hyprlock": [
+        "hyprlock.conf",
+        "hyprlock"
+    ],
+    "kitty": [
+        "kitty.conf"
+    ],
+    "rofi": [
+        "config.rasi",
+        "rofi-wallpaper-selector-theme.rasi",
+        "themes"
+    ],
+    "swaync": [
+        "config.json",
+        "configSchema.json",
+        "style.css",
+        "scripts"
+    ],
+    "waybar": [
+        "config",
+        "style.css"
+    ],
+    "wlogout": [
+        "layout",
+        "style.css",
+        "icons"
+    ]
+ }
